@@ -11,7 +11,7 @@ def build_perfect_calendar():
     # 7월 3일 독립기념일 휴장으로 인한 고용동향 목요일 이동 분 완벽 반영
     calendar_data = [
         {
-            "id": "macro-2026-07-02-fomc",
+            "id": "macro-2026-07-08-fomc",
             "title": "[🏛️의사록] 6월 FOMC 회의록 공개",
             "category": "연준 (FOMC)",
             "importance": "HIGH",
@@ -41,7 +41,7 @@ def build_perfect_calendar():
             "description": "삼성전자 2분기 잠정 매출 및 영업이익 발표."
         },
         {
-            "id": "corp-2026-07-24-hynix",
+            "id": "corp-2026-07-10-hynix",
             "title": "[✈️ADR 상장] SK하이닉스",
             "category": "증시 만기일",
             "importance": "HIGH",
