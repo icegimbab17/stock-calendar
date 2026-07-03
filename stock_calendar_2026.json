@@ -1,134 +1,142 @@
 [
   {
-    "id": "2026-01-earnings",
-    "title": "제 1분기 어닝 시즌(실적 발표) 개막",
-    "category": "EARNINGS",
+    "id": "macro-2026-07-03-emp",
+    "title": "[21:30] 미 고용동향보고서",
+    "category": "INDEX",
     "importance": "HIGH",
-    "start_date": "2026-01-15",
-    "end_date": "2026-02-14",
-    "kst_announcement": null,
-    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
-    "is_fixed": false
+    "start_date": "2026-07-03",
+    "end_date": "2026-07-03",
+    "kst_announcement": "2026-07-03 (금) 저녁 9시 30분",
+    "description": "비농업 부문 고용자 수(NFP) 및 실업률 발표. 시장 변동성을 유발하는 핵심 고용 지표입니다."
   },
   {
-    "id": "2026-03-20-witching",
-    "title": "3월 네 마녀의 날 (Quadruple Witching Day)",
+    "id": "corp-samsung-26q2",
+    "title": "[09:00] 🌟삼성전자 2분기 잠정실적발표",
     "category": "MARKET",
-    "importance": "MEDIUM",
-    "start_date": "2026-03-20",
-    "end_date": "2026-03-20",
-    "kst_announcement": null,
-    "description": "3월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
-    "is_fixed": false
-  },
-  {
-    "id": "2026-04-earnings",
-    "title": "제 2분기 어닝 시즌(실적 발표) 개막",
-    "category": "EARNINGS",
     "importance": "HIGH",
-    "start_date": "2026-04-15",
-    "end_date": "2026-05-15",
-    "kst_announcement": null,
-    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
-    "is_fixed": false
+    "start_date": "2026-07-07",
+    "end_date": "2026-07-07",
+    "kst_announcement": "2026-07-07 (화) 오전 9시 00분",
+    "description": "국내 증시 전반의 향방을 결정할 삼성전자의 2분기 매출액 및 영업이익 가이던스 발표일입니다."
   },
   {
-    "id": "2026-06-19-witching",
-    "title": "6월 네 마녀의 날 (Quadruple Witching Day)",
+    "id": "macro-2026-07-14-cpi",
+    "title": "[21:30] 미 소비자물가지수(CPI)",
+    "category": "INDEX",
+    "importance": "HIGH",
+    "start_date": "2026-07-14",
+    "end_date": "2026-07-14",
+    "kst_announcement": "2026-07-14 (화) 저녁 9시 30분",
+    "description": "6월 소비자물가지수 발표. 연준의 금리 스탠스에 직접적인 영향을 주는 인플레이션 지표입니다."
+  },
+  {
+    "id": "corp-skhynix-26q2",
+    "title": "[09:00] SK하이닉스 2분기 실적발표",
     "category": "MARKET",
-    "importance": "MEDIUM",
-    "start_date": "2026-06-19",
-    "end_date": "2026-06-19",
-    "kst_announcement": null,
-    "description": "6월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
-    "is_fixed": false
-  },
-  {
-    "id": "2026-07-earnings",
-    "title": "제 3분기 어닝 시즌(실적 발표) 개막",
-    "category": "EARNINGS",
     "importance": "HIGH",
-    "start_date": "2026-07-15",
-    "end_date": "2026-08-14",
-    "kst_announcement": null,
-    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
-    "is_fixed": false
+    "start_date": "2026-07-24",
+    "end_date": "2026-07-24",
+    "kst_announcement": "2026-07-24 (금) 오전 9시 00분",
+    "description": "반도체 및 HBM 수요 가이던스를 확인할 수 있는 SK하이닉스 본실적 발표일입니다."
   },
   {
-    "id": "2026-07-28-fomc",
-    "title": "7월 FOMC 정기 회의",
+    "id": "macro-2026-07-30-fomc",
+    "title": "[03:00] 🏛️ 7월 FOMC 금리결정",
     "category": "FED",
     "importance": "HIGH",
     "start_date": "2026-07-28",
     "end_date": "2026-07-29",
-    "kst_announcement": "2026-07-30 03:00",
-    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 없음된 회의입니다.",
-    "is_fixed": true
+    "kst_announcement": "2026-07-30 (목) 새벽 3시 성명서 발표",
+    "description": "미국 기준금리 결정 정기 회의 (이번 회의는 점도표 및 경제전망 요약이 없습니다)."
   },
   {
-    "id": "2026-09-15-fomc",
-    "title": "9월 FOMC 정기 회의",
+    "id": "macro-2026-07-30-pce",
+    "title": "[21:30] 미 개인소비지출(PCE)",
+    "category": "INDEX",
+    "importance": "HIGH",
+    "start_date": "2026-07-30",
+    "end_date": "2026-07-30",
+    "kst_announcement": "2026-07-30 (목) 저녁 9시 30분",
+    "description": "6월 개인소비지출 물가지수 발표. 연준이 공식 물가 목표치를 산정할 때 가장 신뢰하는 데이터입니다."
+  },
+  {
+    "id": "macro-2026-08-07-emp",
+    "title": "[21:30] 미 고용동향보고서",
+    "category": "INDEX",
+    "importance": "HIGH",
+    "start_date": "2026-08-07",
+    "end_date": "2026-08-07",
+    "kst_announcement": "2026-08-07 (금) 저녁 9시 30분",
+    "description": "7월 비농업 고용자 수 및 실업률 발표."
+  },
+  {
+    "id": "macro-2026-08-12-cpi",
+    "title": "[21:30] 미 소비자물가지수(CPI)",
+    "category": "INDEX",
+    "importance": "HIGH",
+    "start_date": "2026-08-12",
+    "end_date": "2026-08-12",
+    "kst_announcement": "2026-08-12 (수) 저녁 9시 30분",
+    "description": "7월 소비자물가지수 발표."
+  },
+  {
+    "id": "macro-2026-08-28-pce",
+    "title": "[21:30] 미 개인소비지출(PCE)",
+    "category": "INDEX",
+    "importance": "HIGH",
+    "start_date": "2026-08-28",
+    "end_date": "2026-08-28",
+    "kst_announcement": "2026-08-28 (금) 저녁 9시 30분",
+    "description": "7월 개인소비지출 물가지수 발표."
+  },
+  {
+    "id": "macro-2026-09-04-emp",
+    "title": "[21:30] 미 고용동향보고서",
+    "category": "INDEX",
+    "importance": "HIGH",
+    "start_date": "2026-09-04",
+    "end_date": "2026-09-04",
+    "kst_announcement": "2026-09-04 (금) 저녁 9시 30분",
+    "description": "8월 비농업 고용자 수 및 실업률 발표."
+  },
+  {
+    "id": "macro-2026-09-11-cpi",
+    "title": "[21:30] 미 소비자물가지수(CPI)",
+    "category": "INDEX",
+    "importance": "HIGH",
+    "start_date": "2026-09-11",
+    "end_date": "2026-09-11",
+    "kst_announcement": "2026-09-11 (금) 저녁 9시 30분",
+    "description": "8월 소비자물가지수 발표."
+  },
+  {
+    "id": "macro-2026-09-17-fomc",
+    "title": "[03:00] 🏛️ 9월 FOMC (점도표★)",
     "category": "FED",
     "importance": "HIGH",
     "start_date": "2026-09-15",
     "end_date": "2026-09-16",
-    "kst_announcement": "2026-09-17 03:00",
-    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 포함(★)된 회의입니다.",
-    "is_fixed": true
+    "kst_announcement": "2026-09-17 (목) 새벽 3시 금리 및 점도표 동시 공개",
+    "description": "하반기 금융 시장의 최대 분수령. 연준 위원들의 향후 금리 전망 스탠스를 확인할 수 있는 점도표가 공개됩니다."
   },
   {
-    "id": "2026-09-18-witching",
-    "title": "9월 네 마녀의 날 (Quadruple Witching Day)",
+    "id": "macro-2026-09-18-witching",
+    "title": "9월 네 마녀의 날 (만기일)",
     "category": "MARKET",
     "importance": "MEDIUM",
     "start_date": "2026-09-18",
     "end_date": "2026-09-18",
-    "kst_announcement": null,
-    "description": "9월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
-    "is_fixed": false
+    "kst_announcement": "2026-09-19 (토) 새벽 05:00 미 증시 마감 시점",
+    "description": "주가지수 및 개별주식의 선물·옵션 동시 만기일입니다. 장 마감 직전 수급 변동성이 커집니다."
   },
   {
-    "id": "2026-10-earnings",
-    "title": "제 4분기 어닝 시즌(실적 발표) 개막",
-    "category": "EARNINGS",
+    "id": "macro-2026-09-25-pce",
+    "title": "[21:30] 미 개인소비지출(PCE)",
+    "category": "INDEX",
     "importance": "HIGH",
-    "start_date": "2026-10-15",
-    "end_date": "2026-11-14",
-    "kst_announcement": null,
-    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
-    "is_fixed": false
-  },
-  {
-    "id": "2026-10-27-fomc",
-    "title": "10월 FOMC 정기 회의",
-    "category": "FED",
-    "importance": "HIGH",
-    "start_date": "2026-10-27",
-    "end_date": "2026-10-28",
-    "kst_announcement": "2026-10-29 03:00",
-    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 없음된 회의입니다.",
-    "is_fixed": true
-  },
-  {
-    "id": "2026-12-08-fomc",
-    "title": "12월 FOMC 정기 회의",
-    "category": "FED",
-    "importance": "HIGH",
-    "start_date": "2026-12-08",
-    "end_date": "2026-12-09",
-    "kst_announcement": "2026-12-10 03:00",
-    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 포함(★)된 회의입니다.",
-    "is_fixed": true
-  },
-  {
-    "id": "2026-12-18-witching",
-    "title": "12월 네 마녀의 날 (Quadruple Witching Day)",
-    "category": "MARKET",
-    "importance": "MEDIUM",
-    "start_date": "2026-12-18",
-    "end_date": "2026-12-18",
-    "kst_announcement": null,
-    "description": "12월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
-    "is_fixed": false
+    "start_date": "2026-09-25",
+    "end_date": "2026-09-25",
+    "kst_announcement": "2026-09-25 (금) 저녁 9시 30분",
+    "description": "8월 개인소비지출 물가지수 발표."
   }
 ]
