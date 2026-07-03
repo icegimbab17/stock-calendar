@@ -1,92 +1,42 @@
 [
   {
-    "id": "macro-2026-07-02-fomc-minutes",
-    "title": "[03:00] 🏛️ 6월 FOMC 회의록 공개",
-    "category": "FED",
-    "importance": "MEDIUM",
-    "start_date": "2026-07-02",
-    "end_date": "2026-07-02",
-    "kst_announcement": "2026-07-02 (목) 새벽 03:00",
-    "description": "연준 위원들의 세부 발언록이 공개되어 향후 금리 인하/인상 기조의 힌트를 얻을 수 있습니다."
-  },
-  {
-    "id": "macro-2026-07-03-emp",
-    "title": "[21:30] 미 고용동향보고서",
+    "id": "macro-2026-07-02-nfp",
+    "title": "[🚨발표완료] 🇺🇸 미 6월 고용동향보고서(NFP)",
     "category": "INDEX",
     "importance": "HIGH",
-    "start_date": "2026-07-03",
-    "end_date": "2026-07-03",
-    "kst_announcement": "2026-07-03 (금) 저녁 21:30",
-    "description": "비농업 고용 지표 및 실업률 발표"
+    "start_date": "2026-07-02",
+    "end_date": "2026-07-02",
+    "kst_announcement": "2026-07-02 (목) 21:30",
+    "description": "미국 노동부(BLS) 공식 발표 완료. 독립기념일(7월 3일) 연휴 휴장으로 인해 목요일 조기 발표됨."
+  },
+  {
+    "id": "macro-2026-07-09-fomc-minutes",
+    "title": "[🏛️의사록] 미 6월 FOMC 회의록 공개",
+    "category": "FED",
+    "importance": "HIGH",
+    "start_date": "2026-07-09",
+    "end_date": "2026-07-09",
+    "kst_announcement": "2026-07-09 (목) 새벽 03:00 (미 동부 8일 14:00)",
+    "description": "연준 위원들의 금리 기조 파악을 위한 6월 정례회의록 세부본 공개 일정."
   },
   {
     "id": "macro-2026-07-14-cpi",
-    "title": "[21:30] 미 소비자물가지수(CPI)",
+    "title": "[🎯인플레] 미 6월 소비자물가지수(CPI)",
     "category": "INDEX",
     "importance": "HIGH",
     "start_date": "2026-07-14",
     "end_date": "2026-07-14",
-    "kst_announcement": "2026-07-14 (화) 저녁 21:30",
-    "description": "미국 인플레이션 핵심 지표"
+    "kst_announcement": "2026-07-14 (화) 21:30",
+    "description": "금리 인하 시점을 결정할 미국의 핵심 물가 지표 변곡점."
   },
   {
-    "id": "macro-2026-07-30-fomc",
-    "title": "[03:00] 🏛️ 7월 FOMC 금리결정",
+    "id": "macro-2026-07-30-fomc-rate",
+    "title": "[🔥금리결정] 미 연준(Fed) 7월 기준금리 발표",
     "category": "FED",
-    "importance": "HIGH",
-    "start_date": "2026-07-28",
-    "end_date": "2026-07-29",
-    "kst_announcement": "2026-07-30 (목) 새벽 03:00",
-    "description": "미 연준 기준금리 결정 성명서 발표"
-  },
-  {
-    "id": "macro-2026-07-30-pce",
-    "title": "[21:30] 미 개인소비지출(PCE)",
-    "category": "INDEX",
     "importance": "HIGH",
     "start_date": "2026-07-30",
     "end_date": "2026-07-30",
-    "kst_announcement": "2026-07-30 (목) 저녁 21:30",
-    "description": "연준이 가장 신뢰하는 근원 물가 지표"
-  },
-  {
-    "id": "macro-2026-08-20-fomc-minutes",
-    "title": "[03:00] 🏛️ 7월 FOMC 회의록 공개",
-    "category": "FED",
-    "importance": "MEDIUM",
-    "start_date": "2026-08-20",
-    "end_date": "2026-08-20",
-    "kst_announcement": "2026-08-20 (목) 새벽 03:00",
-    "description": "7월 진행된 금리 결정 회의의 상세 의사록 의무 공개일입니다."
-  },
-  {
-    "id": "macro-2026-09-17-fomc",
-    "title": "[03:00] 🏛️ 9월 FOMC (점도표★)",
-    "category": "FED",
-    "importance": "HIGH",
-    "start_date": "2026-09-15",
-    "end_date": "2026-09-16",
-    "kst_announcement": "2026-09-17 (목) 새벽 03:00",
-    "description": "향후 금리 전망 점도표가 함께 공개되는 슈퍼 위크입니다."
-  },
-  {
-    "id": "macro-2026-10-08-fomc-minutes",
-    "title": "[03:00] 🏛️ 9월 FOMC 회의록 공개",
-    "category": "FED",
-    "importance": "MEDIUM",
-    "start_date": "2026-10-08",
-    "end_date": "2026-10-08",
-    "kst_announcement": "2026-10-08 (목) 새벽 03:00",
-    "description": "9월 대격변 FOMC 회의의 상세 기록이 베일을 벗는 날입니다."
-  },
-  {
-    "id": "corp-samsung-2026-07-07-guidance",
-    "title": "[09:00] 🌟 삼성전자 2분기 잠정실적(가이던스)",
-    "category": "MARKET",
-    "importance": "HIGH",
-    "start_date": "2026-07-07",
-    "end_date": "2026-07-07",
-    "kst_announcement": "2026-07-07 (화) 오전 09:00",
-    "description": "2분기 매출액, 영업이익 총액 잠정 가이던스 선공개일"
+    "kst_announcement": "2026-07-30 (목) 새벽 03:00",
+    "description": "FOMC 정례회의 종료 후 성명서 발표 및 의장 기자회견 생중계."
   }
 ]
