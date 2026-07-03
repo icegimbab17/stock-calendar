@@ -2,35 +2,40 @@ name: Daily Stock Calendar Update
 
 on:
   schedule:
-    - cron: '0 21 * * *' # 매일 한국시간 새벽 6시 자동 실행
-  workflow_dispatch: # 수동 실행 버튼 활성화
+    - cron: '0 21 * * *' # 매일 한국 시간 오전 6시 자동 실행
+  workflow_dispatch:      # 수동 실행 버튼 활성화
 
+# 핵심: 파이썬 로봇이 크롤링한 데이터를 저장소에 쓸 수 있도록 명시적 권한 부여
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: 저장소 코드 가져오기
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: 파이썬(Python) 환경 설정
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-    - name: 필수 라이브러리 및 크롤링 도구 설치
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests beautifulsoup4
+      - name: Install Dependencies
+        run: |
+          pip install beautifulsoup4 requests
 
-    - name: 네이버 금융 실시간 크롤링 및 데이터 갱신 실행
-      run: python update_calendar.py
+      - name: Run Calendar Engine
+        run: |
+          python update_calendar.py
 
-    - name: 변경된 데이터 자동 저장 및 깃허브에 반영
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add stock_calendar_2026.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "🔄 실시간 크롤링 데이터 반영 완료" && git push)
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add stock_calendar_2026.json
+          # 변경사항이 있을 때만 안전하게 커밋 진행 (Exit Code 128 방지)
+          git diff-index --quiet HEAD || git commit -m "🚨 [Auto] 실시간 매크로 및 ADR 일정 동적 반영"
+          git push
