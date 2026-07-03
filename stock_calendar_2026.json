@@ -1,0 +1,134 @@
+[
+  {
+    "id": "2026-01-earnings",
+    "title": "제 1분기 어닝 시즌(실적 발표) 개막",
+    "category": "EARNINGS",
+    "importance": "HIGH",
+    "start_date": "2026-01-15",
+    "end_date": "2026-02-14",
+    "kst_announcement": null,
+    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
+    "is_fixed": false
+  },
+  {
+    "id": "2026-03-20-witching",
+    "title": "3월 네 마녀의 날 (Quadruple Witching Day)",
+    "category": "MARKET",
+    "importance": "MEDIUM",
+    "start_date": "2026-03-20",
+    "end_date": "2026-03-20",
+    "kst_announcement": null,
+    "description": "3월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
+    "is_fixed": false
+  },
+  {
+    "id": "2026-04-earnings",
+    "title": "제 2분기 어닝 시즌(실적 발표) 개막",
+    "category": "EARNINGS",
+    "importance": "HIGH",
+    "start_date": "2026-04-15",
+    "end_date": "2026-05-15",
+    "kst_announcement": null,
+    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
+    "is_fixed": false
+  },
+  {
+    "id": "2026-06-19-witching",
+    "title": "6월 네 마녀의 날 (Quadruple Witching Day)",
+    "category": "MARKET",
+    "importance": "MEDIUM",
+    "start_date": "2026-06-19",
+    "end_date": "2026-06-19",
+    "kst_announcement": null,
+    "description": "6월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
+    "is_fixed": false
+  },
+  {
+    "id": "2026-07-earnings",
+    "title": "제 3분기 어닝 시즌(실적 발표) 개막",
+    "category": "EARNINGS",
+    "importance": "HIGH",
+    "start_date": "2026-07-15",
+    "end_date": "2026-08-14",
+    "kst_announcement": null,
+    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
+    "is_fixed": false
+  },
+  {
+    "id": "2026-07-28-fomc",
+    "title": "7월 FOMC 정기 회의",
+    "category": "FED",
+    "importance": "HIGH",
+    "start_date": "2026-07-28",
+    "end_date": "2026-07-29",
+    "kst_announcement": "2026-07-30 03:00",
+    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 없음된 회의입니다.",
+    "is_fixed": true
+  },
+  {
+    "id": "2026-09-15-fomc",
+    "title": "9월 FOMC 정기 회의",
+    "category": "FED",
+    "importance": "HIGH",
+    "start_date": "2026-09-15",
+    "end_date": "2026-09-16",
+    "kst_announcement": "2026-09-17 03:00",
+    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 포함(★)된 회의입니다.",
+    "is_fixed": true
+  },
+  {
+    "id": "2026-09-18-witching",
+    "title": "9월 네 마녀의 날 (Quadruple Witching Day)",
+    "category": "MARKET",
+    "importance": "MEDIUM",
+    "start_date": "2026-09-18",
+    "end_date": "2026-09-18",
+    "kst_announcement": null,
+    "description": "9월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
+    "is_fixed": false
+  },
+  {
+    "id": "2026-10-earnings",
+    "title": "제 4분기 어닝 시즌(실적 발표) 개막",
+    "category": "EARNINGS",
+    "importance": "HIGH",
+    "start_date": "2026-10-15",
+    "end_date": "2026-11-14",
+    "kst_announcement": null,
+    "description": "대형 은행주를 시작으로 주요 빅테크 기업들의 실적 및 가이드라인 발표가 집중되는 시기입니다.",
+    "is_fixed": false
+  },
+  {
+    "id": "2026-10-27-fomc",
+    "title": "10월 FOMC 정기 회의",
+    "category": "FED",
+    "importance": "HIGH",
+    "start_date": "2026-10-27",
+    "end_date": "2026-10-28",
+    "kst_announcement": "2026-10-29 03:00",
+    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 없음된 회의입니다.",
+    "is_fixed": true
+  },
+  {
+    "id": "2026-12-08-fomc",
+    "title": "12월 FOMC 정기 회의",
+    "category": "FED",
+    "importance": "HIGH",
+    "start_date": "2026-12-08",
+    "end_date": "2026-12-09",
+    "kst_announcement": "2026-12-10 03:00",
+    "description": "미국 기준금리 결정 및 성명서 발표. 이번 회의는 경제전망 및 점도표가 포함(★)된 회의입니다.",
+    "is_fixed": true
+  },
+  {
+    "id": "2026-12-18-witching",
+    "title": "12월 네 마녀의 날 (Quadruple Witching Day)",
+    "category": "MARKET",
+    "importance": "MEDIUM",
+    "start_date": "2026-12-18",
+    "end_date": "2026-12-18",
+    "kst_announcement": null,
+    "description": "12월 주가지수 및 개별주식 선물·옵션 동시 만기일입니다. 수급 장세로 인한 변동성에 유의하세요.",
+    "is_fixed": false
+  }
+]
