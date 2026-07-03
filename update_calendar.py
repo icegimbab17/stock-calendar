@@ -15,8 +15,8 @@ def build_perfect_calendar():
             "title": "[🏛️의사록] 6월 FOMC 회의록 공개",
             "category": "연준 (FOMC)",
             "importance": "HIGH",
-            "start_date": "2026-07-02",
-            "end_date": "2026-07-02",
+            "start_date": "2026-07-08",
+            "end_date": "2026-07-08",
             "kst_announcement": "03:00",
             "description": "미 연준 위원들의 금리 기조 파악을 위한 의사록 세부본 공개."
         },
@@ -40,6 +40,14 @@ def build_perfect_calendar():
             "kst_announcement": "09:00",
             "description": "삼성전자 2분기 잠정 매출 및 영업이익 발표."
         },
+                {
+            "id": "corp-2026-07-24-hynix",
+            "title": "[✈️ADR 상장] SK하이닉스",
+            "category": "증시 만기일",
+            "importance": "HIGH",
+            "start_date": "2026-07-10",
+            "end_date": "2026-07-10",
+            "description": "SK하이닉스 ADR상장."
         {
             "id": "macro-2026-07-14-cpi",
             "title": "[🎯인플레] 미 소비자물가지수(CPI)",
@@ -52,7 +60,7 @@ def build_perfect_calendar():
         },
         {
             "id": "corp-2026-07-24-hynix",
-            "title": "[✈️ADR] SK하이닉스 2분기 실적발표 (DR분할)",
+            "title": "[실적] SK하이닉스 2분기 실적발표",
             "category": "증시 만기일",
             "importance": "HIGH",
             "start_date": "2026-07-24",
