@@ -40,7 +40,7 @@ def build_perfect_calendar():
             "kst_announcement": "09:00",
             "description": "삼성전자 2분기 잠정 매출 및 영업이익 발표."
         },
-                {
+        {
             "id": "corp-2026-07-24-hynix",
             "title": "[✈️ADR 상장] SK하이닉스",
             "category": "증시 만기일",
@@ -48,6 +48,7 @@ def build_perfect_calendar():
             "start_date": "2026-07-10",
             "end_date": "2026-07-10",
             "description": "SK하이닉스 ADR상장."
+        },
         {
             "id": "macro-2026-07-14-cpi",
             "title": "[🎯인플레] 미 소비자물가지수(CPI)",
