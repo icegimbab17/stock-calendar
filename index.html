@@ -3,120 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자동 업데이트 글로벌 주식 캘린더</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <title>실시간 미 거시경제 지수 캘린더</title>
+    <!-- FullCalendar CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/embed/tailwindcss@3.4.1"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
-        body { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
-        .fc { --fc-border-color: #334155; background: #1e293b; padding: 15px; border-radius: 12px; border: 1px solid #334155; }
-        .fc .fc-col-header-cell-cushion { color: #94a3b8; font-size: 0.85rem; padding: 8px 0; }
-        .fc .fc-daygrid-day-number { color: #f1f5f9; font-size: 0.9rem; padding: 6px; font-weight: 600; }
-        .fc .fc-toolbar-title { color: #f1f5f9; font-size: 1.25rem !important; font-weight: 700; }
-        .fc .fc-button-primary { background-color: #334155 !important; border-color: #475569 !important; color: #f1f5f9 !important; }
-        .fc .fc-button-primary:hover { background-color: #475569 !important; }
-        .fc-theme-standard td, .fc-theme-standard th { border: 1px solid rgba(51, 65, 85, 0.6) !important; }
-        .fc-day-today { background-color: rgba(37, 99, 235, 0.15) !important; }
-        .fc-event { cursor: pointer; padding: 3px 6px; font-size: 0.75rem !important; border-radius: 4px !important; font-weight: 600; }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        /* 캘린더 내부 고정 스크롤바 강제 제거 및 반응형 확장 */
+        .fc {
+            background-color: #1e293b;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px solid #334155;
+        }
+        /* 중요: 모바일 및 PC에서 이벤트 텍스트가 잘리지 않고 아래로 자동 줄바꿈되도록 수정 */
+        .fc-event {
+            white-space: normal !important;
+            overflow: visible !important;
+            word-break: break-all;
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+            padding: 3px 6px !important;
+            font-size: 0.85rem !important;
+            border-radius: 4px !important;
+            border: none !important;
+            cursor: pointer;
+        }
+        /* 주말 색상 커스텀 */
+        .fc-day-sun a { color: #f87171 !important; } /* 일요일 빨간색 */
+        .fc-day-sat a { color: #60a5fa !important; } /* 토요일 파란색 */
+        
+        /* 📱 휴대폰(모바일) 환경 전용 초강력 스타일 보정 */
+        @media (max-width: 768px) {
+            .fc .fc-toolbar {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            .fc-toolbar-title {
+                font-size: 1.25rem !important;
+            }
+            /* 모바일에서 날짜 칸이 찌그러지지 않도록 최소 세로 높이 확보 (위아래로 길어짐) */
+            .fc .fc-daygrid-day-frame {
+                min-height: 95px !important;
+            }
+            .fc-event {
+                font-size: 0.75rem !important;
+                padding: 2px 4px !important;
+            }
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen">
+<body class="p-4 md:p-8 font-sans">
 
-    <div class="max-w-6xl mx-auto px-4 py-8">
-        <header class="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+    <div class="max-w-6xl mx-auto">
+        <!-- 상단 헤더 영역 -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
             <div>
-                <h1 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-400 mb-1">
-                    🔄 실시간 미 거시경제 지수 캘린더
+                <h1 class="text-2xl md:text-3xl font-bold text-cyan-400 flex items-center gap-2">
+                    📘 실시간 미 거시경제 지수 캘린더
                 </h1>
-                <p class="text-slate-400 text-xs md:text-sm">로봇이 매일 자동으로 업데이트하는 나만의 주식 대시보드</p>
+                <p class="text-sm text-slate-400 mt-1">로봇이 매일 자동으로 업데이트하는 나만의 주식 대시보드</p>
             </div>
-            <div class="flex flex-wrap gap-3 text-xs bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/40">
-                <div class="flex items-center gap-1.5"><span class="w-3 h-3 bg-cyan-500 rounded-sm"></span> 경제지수</div>
-                <div class="flex items-center gap-1.5"><span class="w-3 h-3 bg-red-500 rounded-sm"></span> 연준 (FOMC)</div>
-                <div class="flex items-center gap-1.5"><span class="w-3 h-3 bg-purple-500 rounded-sm"></span> 증시 만기일</div>
-            </div>
-        </header>
-
-        <div class="grid grid-cols-1 gap-6">
-            <div><div id="calendar"></div></div>
-            <div id="detail-card" class="bg-slate-800/80 border border-slate-700/80 rounded-xl p-5 shadow-lg hidden">
-                <div class="flex items-center justify-between gap-2 mb-3">
-                    <div class="flex items-center gap-2"><span id="detail-emoji" class="text-xl">📊</span><h3 id="detail-title" class="text-lg font-bold text-cyan-400">일정 선택</h3></div>
-                    <span id="detail-importance" class="px-2 py-0.5 text-xs font-bold rounded"></span>
+            
+            <!-- 범례 (Legend) -->
+            <div class="flex flex-wrap gap-3 bg-slate-800 p-3 rounded-lg border border-slate-700 text-xs md:text-sm">
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 bg-cyan-500 rounded-full"></span><span>경제지수</span>
                 </div>
-                <div class="text-xs text-slate-400 font-mono mb-2"><span class="text-slate-500">발표 일자:</span> <span id="detail-date"></span></div>
-                <p id="detail-desc" class="text-sm text-slate-300 leading-relaxed"></p>
-                <div id="detail-kst-container" class="mt-3 p-2.5 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hidden">
-                    <div id="detail-kst" class="text-xs text-cyan-400 font-bold"></div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 bg-rose-500 rounded-full"></span><span>연준 (FOMC)</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="w-3 h-3 bg-purple-500 rounded-full"></span><span>증시 만기일</span>
                 </div>
             </div>
         </div>
+
+        <!-- 📅 달력 컨테이너 (위아래 족쇄를 풀고 height: auto로 유연하게 늘어남) -->
+        <div id="calendar" class="shadow-2xl"></div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 핵심 변경 사항: 하드코딩 데이터를 지우고, 같은 폴더에 있는 JSON 파일을 인터넷으로 읽어옵니다.
-            fetch('./stock_calendar_2026.json')
-                .then(response => response.json())
-                .then(stockEvents => {
-                    const formattedEvents = stockEvents.map(ev => {
-                        let color = '#06b6d4'; 
-                        if (ev.category === 'FED') color = '#ef4444'; 
-                        if (ev.category === 'MARKET') color = '#a855f7'; 
-
-                        return {
-                            id: ev.id,
-                            title: ev.title,
-                            start: ev.start_date,
-                            end: ev.end_date,
-                            backgroundColor: color,
-                            borderColor: color,
-                            extendedProps: { category: ev.category, importance: ev.importance, kst: ev.kst_announcement, description: ev.description }
-                        };
-                    });
-
-                    const calendarEl = document.getElementById('calendar');
-                    const calendar = new FullCalendar.Calendar(calendarEl, {
-                        initialView: 'dayGridMonth',
-                        locale: 'ko',
-                        initialDate: '2026-07-01',
-                        headerToolbar: { left: 'prev,next today', center: 'title', right: 'dayGridMonth,dayGridWeek' },
-                        buttonText: { today: '오늘', month: '월별', week: '주별' },
-                        events: formattedEvents,
-                        eventClick: function(info) {
-                            const props = info.event.extendedProps;
-                            const card = document.getElementById('detail-card');
-                            let emoji = '📊';
-                            if(props.category === 'FED') emoji = '🏛️';
-                            if(props.category === 'MARKET') emoji = '📈';
-
-                            document.getElementById('detail-emoji').innerText = emoji;
-                            document.getElementById('detail-title').innerText = info.event.title;
-                            document.getElementById('detail-desc').innerText = props.description;
-                            document.getElementById('detail-date').innerText = info.event.startStr;
-
-                            const impBadge = document.getElementById('detail-importance');
-                            if(props.importance === 'HIGH') {
-                                impBadge.innerText = '중요도: 상';
-                                impBadge.className = 'px-2 py-0.5 text-xs font-bold bg-red-500/20 text-red-400 rounded border border-red-500/30';
-                            } else {
-                                impBadge.innerText = '중요도: 중';
-                                impBadge.className = 'px-2 py-0.5 text-xs font-bold bg-amber-500/20 text-amber-400 rounded border border-amber-500/30';
-                            }
-
-                            const kstContainer = document.getElementById('detail-kst-container');
-                            if(props.kst) {
-                                document.getElementById('detail-kst').innerText = `🔔 한국 시간 기준 발표: ${props.kst}`;
-                                kstContainer.classList.remove('hidden');
-                            } else {
-                                kstContainer.classList.add('hidden');
-                            }
-                            card.classList.remove('hidden');
-                        }
-                    });
-                    calendar.render();
-                })
-                .catch(error => console.error('데이터를 불러오는 중 오류 발생:', error));
+            var calendarEl = document.getElementById('calendar');
+            
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'ko',
+                // ⭐ 핵심 설정: 고정 높이를 없애고 달력이 콘텐츠에 맞춰 스스로 길어지게 만듭니다. (내부 막대기 삭제)
+                height: 'auto', 
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek'
+                },
+                buttonText: {
+                    today: '오늘',
+                    month: '월별',
+                    week: '주별'
+                },
+                // 로봇이 실시간으로 크롤링해다 바치는 JSON 파일 연동
+                events: function(info, successCallback, failureCallback) {
+                    fetch('stock_calendar_2026.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            // FullCalendar 규격에 맞게 매핑 및 카테고리별 색상 부여
+                            var events = data.map(item => {
+                                let bgColor = '#06b6d4'; // 기본 경제지수 (Cyan)
+                                if (item.category === 'FED') bgColor = '#f43f5e'; // 연준 (Rose)
+                                if (item.category === 'MARKET' && item.title.includes('만기일')) bgColor = '#a855f7'; // 만기일 (Purple)
+                                if (item.category === 'MARKET' && item.title.includes('삼성')) bgColor = '#2563eb'; // 삼성전자 (Blue 포인트)
+                                
+                                return {
+                                    id: item.id,
+                                    title: item.title,
+                                    start: item.start_date,
+                                    end: item.end_date,
+                                    backgroundColor: bgColor,
+                                    extendedProps: {
+                                        kst: item.kst_announcement,
+                                        desc: item.description
+                                    }
+                                };
+                            });
+                            successCallback(events);
+                        })
+                        .catch(error => {
+                            console.error('데이터 로드 실패:', error);
+                            failureCallback(error);
+                        });
+                },
+                // 팝업 이벤트 추가: 달력의 일정을 클릭하면 상세 정보를 깔끔하게 보여줍니다.
+                eventClick: function(info) {
+                    alert(
+                        `📢 [상세 일정 정보]\n\n` +
+                        `📌 일정: ${info.event.title}\n` +
+                        `⏰ 시간(KST): ${info.event.extendedProps.kst || '시간 정보 없음'}\n\n` +
+                        `📝 내용 요약:\n${info.event.extendedProps.desc || '상세 설명이 없습니다.'}`
+                    );
+                }
+            });
+            
+            calendar.render();
         });
     </script>
 </body>
