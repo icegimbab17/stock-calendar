@@ -104,13 +104,11 @@ def get_breaking_market_news():
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            # 주요 뉴스 제목을 품고 있는 클래스 탐색
             subjects = soup.select('.articleSubject a, .blocka, .title')
             
             for sub in subjects:
                 title_text = sub.text.strip()
                 
-                # 뉴스 제목 중 증시 타격이 큰 키워드가 포함되어 있는지 확인
                 if any(kw in title_text for kw in shock_keywords):
                     news_events.append({
                         "id": f"news-{today_str}-{hash(title_text) % 1000}",
@@ -122,7 +120,6 @@ def get_breaking_market_news():
                         "kst_announcement": f"{today_str} 장중 속보 포착",
                         "description": f"실시간 금융 뉴스 자동 감지: 시장 심리에 지대한 영향을 미칠 수 있는 헤드라인 뉴스입니다.\n원문 헤드라인: {title_text}"
                     })
-                    # 달력이 너무 복잡해지지 않도록 최대 2개까지만 반영
                     if len(news_events) >= 2:
                         break
     except Exception as e:
@@ -132,17 +129,16 @@ def get_breaking_market_news():
 
 def fetch_macro_data():
     """
-    글로벌 거시경제(FOMC 회의록, CPI, PCE 등) 핵심 마스터 데이터
+    글로벌 거시경제 핵심 마스터 데이터 (2026년 7월 실제 일정 반영 완료)
     """
     return [
-        { "id": "macro-2026-07-02-fomc-minutes", "title": "[03:00] 🏛️ 6월 FOMC 회의록 공개", "category": "FED", "importance": "MEDIUM", "start_date": "2026-07-02", "end_date": "2026-07-02", "kst_announcement": "2026-07-02 (목) 새벽 03:00", "description": "연준 위원들의 세부 발언록이 공개되어 향후 금리 기조의 결정적 힌트를 제공합니다." },
-        { "id": "macro-2026-07-03-emp", "title": "[21:30] 미 고용동향보고서", "category": "INDEX", "importance": "HIGH", "start_date": "2026-07-03", "end_date": "2026-07-03", "kst_announcement": "2026-07-03 (금) 저녁 21:30", "description": "비농업 고용 지표 및 실업률 발표" },
+        { "id": "macro-2026-07-02-emp", "title": "[21:30] 🇺🇸 미 6월 고용동향보고서(NFP)", "category": "INDEX", "importance": "HIGH", "start_date": "2026-07-02", "end_date": "2026-07-02", "kst_announcement": "2026-07-02 (목) 저녁 21:30", "description": "비농업 고용자 수 및 실업률 발표 (독립기념일 휴장으로 하루 조기 발표)" },
+        { "id": "macro-2026-07-09-fomc-minutes", "title": "[03:00] 🏛️ 6월 FOMC 의사록 공개", "category": "FED", "importance": "MEDIUM", "start_date": "2026-07-09", "end_date": "2026-07-09", "kst_announcement": "2026-07-09 (목) 새벽 03:00 (미 동부기준 7월 8일)", "description": "연준 위원들의 세부 발언록이 공개되어 향후 금리 인상/인하 기조의 힌트를 제공합니다." },
         { "id": "macro-2026-07-14-cpi", "title": "[21:30] 미 소비자물가지수(CPI)", "category": "INDEX", "importance": "HIGH", "start_date": "2026-07-14", "end_date": "2026-07-14", "kst_announcement": "2026-07-14 (화) 저녁 21:30", "description": "미국 인플레이션의 방향타 역할을 하는 핵심 지표" },
-        { "id": "macro-2026-07-30-fomc", "title": "[03:00] 🏛️ 7월 FOMC 금리결정", "category": "FED", "importance": "HIGH", "start_date": "2026-07-28", "end_date": "2026-07-29", "kst_announcement": "2026-07-30 (목) 새벽 03:00", "description": "미 연준 기준금리 결정 성명서 및 파월 의장 기자회견" },
-        { "id": "macro-2026-07-30-pce", "title": "[21:30] 미 개인소비지출(PCE)", "category": "INDEX", "importance": "HIGH", "start_date": "2026-07-30", "end_date": "2026-07-30", "kst_announcement": "2026-07-30 (목) 저녁 21:30", "description": "연준이 인플레이션 판단 시 가장 신뢰하는 근원 물가 지표" },
+        { "id": "macro-2026-07-30-fomc", "title": "[03:00] 🏛️ 7월 FOMC 금리결정", "category": "FED", "importance": "HIGH", "start_date": "2026-07-28", "end_date": "2026-07-29", "kst_announcement": "2026-07-30 (목) 새벽 03:00", "description": "미 연준 기준금리 결정 성명서 및 케빈 워시 의장 기자회견" },
+        { "id": "macro-2026-07-31-pce", "title": "[21:30] 미 개인소비지출(PCE)", "category": "INDEX", "importance": "HIGH", "start_date": "2026-07-31", "end_date": "2026-07-31", "kst_announcement": "2026-07-31 (금) 저녁 21:30", "description": "연준이 인플레이션 판단 시 가장 신뢰하는 근원 물가 지표" },
         { "id": "macro-2026-08-20-fomc-minutes", "title": "[03:00] 🏛️ 7월 FOMC 회의록 공개", "category": "FED", "importance": "MEDIUM", "start_date": "2026-08-20", "end_date": "2026-08-20", "kst_announcement": "2026-08-20 (목) 새벽 03:00", "description": "7월 진행된 금리 결정 회의의 상세 의사록 의무 공개일입니다." },
-        { "id": "macro-2026-09-17-fomc", "title": "[03:00] 🏛️ 9월 FOMC (점도표★)", "category": "FED", "importance": "HIGH", "start_date": "2026-09-15", "end_date": "2026-09-16", "kst_announcement": "2026-09-17 (목) 새벽 03:00", "description": "향후 금리 전망 점도표가 함께 공개되는 슈퍼 위크입니다." },
-        { "id": "macro-2026-10-08-fomc-minutes", "title": "[03:00] 🏛️ 9월 FOMC 회의록 공개", "category": "FED", "importance": "MEDIUM", "start_date": "2026-10-08", "end_date": "2026-10-08", "kst_announcement": "2026-10-08 (목) 새벽 03:00", "description": "9월 FOMC 회의의 상세 기록이 베일을 벗는 날입니다." }
+        { "id": "macro-2026-09-17-fomc", "title": "[03:00] 🏛️ 9월 FOMC (점도표★)", "category": "FED", "importance": "HIGH", "start_date": "2026-09-15", "end_date": "2026-09-16", "kst_announcement": "2026-09-17 (목) 새벽 03:00", "description": "향후 금리 전망 점도표가 함께 공개되는 슈퍼 위크입니다." }
     ]
 
 def main():
